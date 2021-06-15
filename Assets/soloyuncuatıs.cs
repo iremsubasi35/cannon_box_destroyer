@@ -10,7 +10,7 @@ public class soloyuncuatıs : MonoBehaviour
     public ParticleSystem topatisefekt;
     public AudioSource topatmasesi;
     public Image powerbar;
-    float powersayi;
+    float powersayi = 0.01f;
     bool sonageldimi = false;
     public bool poweroynasinmi = true;
     void Start()
@@ -19,27 +19,25 @@ public class soloyuncuatıs : MonoBehaviour
     }
     IEnumerator powerbarcalistir()
     {
-        while (true && poweroynasinmi)
+        while (poweroynasinmi)
         {
             if (powerbar.fillAmount < 1 && !sonageldimi)
             {
-                powersayi = 0.01f;
+				yield return new WaitForSeconds(0.001f);
                 powerbar.fillAmount += powersayi;
-                yield return new WaitForSeconds(0.001f);
 
             }
             else
             {
                 sonageldimi = true;
-                powersayi = 0.01f;
-                powerbar.fillAmount -= powersayi;
+				powerbar.fillAmount -= 0.01f;
+				Debug.Log(powerbar.fillAmount);
                 yield return new WaitForSeconds(0.001f);
                 if (powerbar.fillAmount == 0)
                 {
-                    sonageldimi = false;
+					sonageldimi = false;
                 }
             }
-
         }
     }
     // Update is called once per frame
@@ -47,18 +45,15 @@ public class soloyuncuatıs : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            poweroynasin();
+			poweroynasin();
+			poweroynasinmi = false;
             Instantiate(topatisefekt, topcikisnoktasi.transform.position, topcikisnoktasi.transform.rotation);
             topatmasesi.Play();
             GameObject topobjem = Instantiate(top, topcikisnoktasi.transform.position, topcikisnoktasi.transform.rotation);
             Rigidbody2D rg = topobjem.GetComponent<Rigidbody2D>();
             rg.AddForce(new Vector2(2f, 0f) * 10f, ForceMode2D.Impulse);
-            poweroynasinmi = false;
 
         }
-
-
-
     }
     public void poweroynasin()
     {
