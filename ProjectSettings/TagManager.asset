@@ -9,6 +9,9 @@ TagManager:
   - ortadakikutular
   - Gamekontrol
   - FxTemporaire
+  - oyuncu2kule
+  - oyuncu1kule
+  - zemin
   layers:
   - Default
   - TransparentFX
