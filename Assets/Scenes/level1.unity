@@ -431,8 +431,8 @@ GameObject:
   - component: {fileID: 270765539}
   - component: {fileID: 270765540}
   m_Layer: 0
-  m_Name: soloyuncuatis
-  m_TagString: oyuncu1
+  m_Name: "soloyuncuat\u0131s"
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -454,6 +454,7 @@ MonoBehaviour:
   topatisefekt: {fileID: 6168435124700640659, guid: 939fe563537de2d4092705e1f8308d44, type: 3}
   topatmasesi: {fileID: 270765540}
   powerbar: {fileID: 368813072}
+  poweroynasinmi: 1
 --- !u!212 &270765537
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1125,7 +1126,7 @@ GameObject:
   - component: {fileID: 377108632}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: zemin
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3263,7 +3264,7 @@ GameObject:
   - component: {fileID: 901935174}
   m_Layer: 0
   m_Name: Tilemap
-  m_TagString: zemin
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5598,7 +5599,7 @@ GameObject:
   - component: {fileID: 1766088357}
   m_Layer: 0
   m_Name: sagoyuncuatis
-  m_TagString: oyuncu2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5782,6 +5783,7 @@ MonoBehaviour:
   topatisefekt: {fileID: 6168435124700640659, guid: 939fe563537de2d4092705e1f8308d44, type: 3}
   topatmasesi: {fileID: 1766088357}
   powerbar: {fileID: 368813072}
+  poweroynasinmi: 1
 --- !u!60 &1766088359
 PolygonCollider2D:
   m_ObjectHideFlags: 0
