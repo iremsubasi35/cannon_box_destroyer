@@ -12,6 +12,8 @@ TagManager:
   - oyuncu2kule
   - oyuncu1kule
   - zemin
+  - oyuncu1
+  - oyuncu2
   layers:
   - Default
   - TransparentFX

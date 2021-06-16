@@ -12,18 +12,20 @@ public class soloyuncuatıs : MonoBehaviour
     public Image powerbar;
     float powersayi = 0.01f;
     bool sonageldimi = false;
-    public bool poweroynasinmi = true;
+    Coroutine powerDongu;
     void Start()
     {
-        StartCoroutine(powerbarcalistir());
+       powerDongu= StartCoroutine(powerbarcalistir());
     }
     IEnumerator powerbarcalistir()
     {
-        while (poweroynasinmi)
+        powerbar.fillAmount = 0;
+        sonageldimi = false;
+        while (true)
         {
             if (powerbar.fillAmount < 1 && !sonageldimi)
             {
-				yield return new WaitForSeconds(0.001f);
+				yield return new WaitForSeconds(0.001f * Time.deltaTime);
                 powerbar.fillAmount += powersayi;
 
             }
@@ -32,7 +34,7 @@ public class soloyuncuatıs : MonoBehaviour
                 sonageldimi = true;
 				powerbar.fillAmount -= 0.01f;
 				Debug.Log(powerbar.fillAmount);
-                yield return new WaitForSeconds(0.001f);
+                yield return new WaitForSeconds(0.001f * Time.deltaTime);
                 if (powerbar.fillAmount == 0)
                 {
 					sonageldimi = false;
@@ -46,18 +48,18 @@ public class soloyuncuatıs : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
 			poweroynasin();
-			poweroynasinmi = false;
+			
             Instantiate(topatisefekt, topcikisnoktasi.transform.position, topcikisnoktasi.transform.rotation);
             topatmasesi.Play();
             GameObject topobjem = Instantiate(top, topcikisnoktasi.transform.position, topcikisnoktasi.transform.rotation);
             Rigidbody2D rg = topobjem.GetComponent<Rigidbody2D>();
-            rg.AddForce(new Vector2(2f, 0f) * 10f, ForceMode2D.Impulse);
-
+            rg.AddForce(new Vector2(2f, 0f) * powerbar.fillAmount *  12f, ForceMode2D.Impulse);
+            StopCoroutine(powerDongu);
         }
     }
     public void poweroynasin()
     {
-        poweroynasinmi = true;
-        StartCoroutine(powerbarcalistir());
+        
+       powerDongu= StartCoroutine(powerbarcalistir());
     }
 }
