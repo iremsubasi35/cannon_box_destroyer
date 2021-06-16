@@ -11,15 +11,12 @@ public class SagOyuncuAtis : MonoBehaviour
     public AudioSource topatmasesi;
     float powersayi = 0.01f;
     bool sonageldimi = false;
-    public bool poweroynasinmi = true;
-    private static SagOyuncuAtis _instance;
-    public static SagOyuncuAtis Instance{get{return _instance;}}
+
     float powerBarOran=0f;
     [SerializeField] float beklemeSuresi;
     bool atis =false;
     void Start()
     {
-        _instance =this;
     }
 
     // Update is called once per frame

@@ -37,7 +37,6 @@ public class top : MonoBehaviour
             Gamekontrol.GetComponent<Gamekontrol>().ses_ve_efekt_olustur(collision.gameObject);
             Gamekontrol.GetComponent<Gamekontrol>().darbevur(1, darbegucu);
             soloyuncuatıs.Instance.poweroynasin();
-            Debug.Log("Burdayim");
             Destroy(gameObject);
             // GetComponent<CircleCollider2D>().isTrigger = false;
         }
