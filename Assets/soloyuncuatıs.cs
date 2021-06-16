@@ -52,6 +52,7 @@ public class soloyuncuatıs : MonoBehaviour
             Instantiate(topatisefekt, topcikisnoktasi.transform.position, topcikisnoktasi.transform.rotation);
             topatmasesi.Play();
             GameObject topobjem = Instantiate(top, topcikisnoktasi.transform.position, topcikisnoktasi.transform.rotation);
+            topobjem.tag = "oyuncu1kule";
             Rigidbody2D rg = topobjem.GetComponent<Rigidbody2D>();
             rg.AddForce(new Vector2(2f, 0f) * 20f * powerbar.fillAmount, ForceMode2D.Impulse);
 

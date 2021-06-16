@@ -25,21 +25,19 @@ public class top : MonoBehaviour
             Destroy(gameObject);
            // GetComponent<CircleCollider2D>().isTrigger = false;
         }
-        if (collision.gameObject.CompareTag("oyuncu2kule"))
+        if (collision.gameObject.CompareTag("oyuncu2kule") && transform.gameObject.CompareTag("oyuncu1kule"))
         {
             Gamekontrol.GetComponent<Gamekontrol>().ses_ve_efekt_olustur(collision.gameObject);
             Gamekontrol.GetComponent<Gamekontrol>().darbevur(2, darbegucu);
-            soloyuncuatıs.Instance.poweroynasin();
-
             Destroy(gameObject);
             // GetComponent<CircleCollider2D>().isTrigger = false;
         }
-        if (collision.gameObject.CompareTag("oyuncu1kule"))
+        if (collision.gameObject.CompareTag("oyuncu1kule") && transform.gameObject.CompareTag("oyuncu2kule"))
         {
             Gamekontrol.GetComponent<Gamekontrol>().ses_ve_efekt_olustur(collision.gameObject);
             Gamekontrol.GetComponent<Gamekontrol>().darbevur(1, darbegucu);
-                        soloyuncuatıs.Instance.poweroynasin();
-
+            soloyuncuatıs.Instance.poweroynasin();
+            Debug.Log("Burdayim");
             Destroy(gameObject);
             // GetComponent<CircleCollider2D>().isTrigger = false;
         }
