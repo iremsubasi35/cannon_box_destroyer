@@ -20,7 +20,8 @@ public class top : MonoBehaviour
         {
             collision.gameObject.GetComponent<ortadakikutular>().darbeal(darbegucu);
             Gamekontrol.GetComponent<Gamekontrol>().ses_ve_efekt_olustur(collision.gameObject);
-            
+                        soloyuncuatıs.Instance.poweroynasin();
+
             Destroy(gameObject);
            // GetComponent<CircleCollider2D>().isTrigger = false;
         }
@@ -28,6 +29,7 @@ public class top : MonoBehaviour
         {
             Gamekontrol.GetComponent<Gamekontrol>().ses_ve_efekt_olustur(collision.gameObject);
             Gamekontrol.GetComponent<Gamekontrol>().darbevur(2, darbegucu);
+            soloyuncuatıs.Instance.poweroynasin();
 
             Destroy(gameObject);
             // GetComponent<CircleCollider2D>().isTrigger = false;
@@ -36,6 +38,7 @@ public class top : MonoBehaviour
         {
             Gamekontrol.GetComponent<Gamekontrol>().ses_ve_efekt_olustur(collision.gameObject);
             Gamekontrol.GetComponent<Gamekontrol>().darbevur(1, darbegucu);
+                        soloyuncuatıs.Instance.poweroynasin();
 
             Destroy(gameObject);
             // GetComponent<CircleCollider2D>().isTrigger = false;
@@ -43,8 +46,7 @@ public class top : MonoBehaviour
         if (collision.gameObject.CompareTag("zemin"))
         {
             Gamekontrol.GetComponent<Gamekontrol>().ses_ve_efekt_olustur(collision.gameObject);
-            
-
+            soloyuncuatıs.Instance.poweroynasin();
             Destroy(gameObject);
             // GetComponent<CircleCollider2D>().isTrigger = false;
         }

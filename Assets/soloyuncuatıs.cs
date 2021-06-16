@@ -13,8 +13,11 @@ public class soloyuncuatıs : MonoBehaviour
     float powersayi = 0.01f;
     bool sonageldimi = false;
     public bool poweroynasinmi = true;
+    private static soloyuncuatıs _instance;
+    public static soloyuncuatıs Instance{get{return _instance;}}
     void Start()
     {
+        _instance =this;
         StartCoroutine(powerbarcalistir());
     }
     IEnumerator powerbarcalistir()
@@ -31,7 +34,6 @@ public class soloyuncuatıs : MonoBehaviour
             {
                 sonageldimi = true;
 				powerbar.fillAmount -= 0.01f;
-				Debug.Log(powerbar.fillAmount);
                 yield return new WaitForSeconds(0.001f);
                 if (powerbar.fillAmount == 0)
                 {
@@ -51,7 +53,7 @@ public class soloyuncuatıs : MonoBehaviour
             topatmasesi.Play();
             GameObject topobjem = Instantiate(top, topcikisnoktasi.transform.position, topcikisnoktasi.transform.rotation);
             Rigidbody2D rg = topobjem.GetComponent<Rigidbody2D>();
-            rg.AddForce(new Vector2(2f, 0f) * 10f, ForceMode2D.Impulse);
+            rg.AddForce(new Vector2(2f, 0f) * 20f * powerbar.fillAmount, ForceMode2D.Impulse);
 
         }
     }
