@@ -9,7 +9,7 @@ public class ortadakikutular : MonoBehaviour
     public GameObject SaglikCanvasi;
     public Image HealthBar;
     GameObject Gamekontrol;
-
+    [SerializeField] bool beyazmi;
     private void Start()
     {
         Gamekontrol = GameObject.FindWithTag("Gamekontrol");
@@ -19,7 +19,15 @@ public class ortadakikutular : MonoBehaviour
     public void darbeal(float darbegucu)
     {
         saglik -= darbegucu;
-        HealthBar.fillAmount = saglik / 100;
+        if (beyazmi)
+        {
+            HealthBar.fillAmount = saglik / 200;
+        }
+        else
+        {
+            HealthBar.fillAmount = saglik / 100;
+
+        }
         if (saglik <= 0)
         {
             Gamekontrol.GetComponent<Gamekontrol>().ses_ve_efekt_olustur2(gameObject);

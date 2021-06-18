@@ -22,7 +22,7 @@ public class SagOyuncuAtis : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!atis)
+        if(!atis && Gamekontrol.Instance.oyunDevamEdiyor)
         {
             atis = true ;
             StartCoroutine(AtesEt());

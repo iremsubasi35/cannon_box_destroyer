@@ -6,23 +6,32 @@ using UnityEngine.UI;
 public class Gamekontrol : MonoBehaviour
 {
 
-    [Header("TOP AYARLARI VE ÝSLEMLERÝ")]
+    public static Gamekontrol Instance { get { return _instance; } }
+    public static Gamekontrol _instance;
+    [Header("TOP AYARLARI VE ISLEMLER?")]
     public GameObject topyokolmaefekt;
     public AudioSource yokolmasesi;
 
-    [Header("ORTADAKÝ KUTULARIN AYARLARI VE ÝSLEMLERÝ")]
+    [Header("ORTADAK? KUTULARIN AYARLARI VE ISLEMLERI")]
     public GameObject kutuyokolmaefekt;
     public AudioSource kutuyokolmasesi;
-    [Header("OYUNCU SAGLÝK AYARLARI")]
+    [Header("OYUNCU SAGLIK AYARLARI")]
     public Image oyuncusaglik1bar;
     float oyuncusaglik1=100;
     public Image oyuncusaglik2bar;
     float oyuncusaglik2=100;
-    void Start()
-    {
-        
-    }
+    [SerializeField] GameObject OyunSonuCanvas;
+    [SerializeField] GameObject Kazanma;
+    [SerializeField] GameObject Kaybetme;
 
+    [HideInInspector] public bool oyunDevamEdiyor;
+
+    private void Awake()
+    {
+        _instance = this;
+        oyunDevamEdiyor = true;
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -50,7 +59,9 @@ public class Gamekontrol : MonoBehaviour
                 oyuncusaglik1bar.fillAmount = oyuncusaglik1 / 100;
                 if (oyuncusaglik1 <= 0)
                 {
-                    Debug.Log("oyuncu 1 yenildi");
+                    oyunDevamEdiyor = false;
+                    OyunSonuCanvas.SetActive(true);
+                    Kaybetme.SetActive(true);
                 }
                 break;
             case 2:
@@ -58,7 +69,10 @@ public class Gamekontrol : MonoBehaviour
                 oyuncusaglik2bar.fillAmount = oyuncusaglik2 / 100;
                 if (oyuncusaglik2 <= 0)
                 {
-                    Debug.Log("oyuncu 2 yenildi");
+                    oyunDevamEdiyor = false;
+                    OyunSonuCanvas.SetActive(true);
+                    Kazanma.SetActive(true);
+
                 }
                 break;
 
