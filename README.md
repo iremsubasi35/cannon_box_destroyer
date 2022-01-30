@@ -12,4 +12,4 @@ The opponent shoots at a certain area with random power at certain intervals.
 
 Details of the game are in the video below. 
 
-[![alt text](https://i9.ytimg.com/vi_webp/nkjwVXedX9I/sddefault.webp?v=61f2e670&sqp=CNTLy48G&rs=AOn4CLDr7Zsyrtc1FIaWpVSBYbolhSXy1A)](https://www.youtube.com/watch?v=nkjwVXedX9I&t=6s)
+[![alt text](https://i9.ytimg.com/vi_webp/nkjwVXedX9I/mqdefault.webp?v=61f2e670&sqp=CMTN2o8G&rs=AOn4CLDX-ByfGiKKyG0hJIX5eUUzDrJ9wQ)](https://www.youtube.com/watch?v=nkjwVXedX9I)
